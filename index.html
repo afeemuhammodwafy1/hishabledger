@@ -33,16 +33,36 @@
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">{
   "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":"Hishab Ledger",
-  "applicationCategory":"FinanceApplication",
-  "operatingSystem":"Android",
-  "softwareVersion":"1.0.0",
-  "description":"A simple, private, offline personal hisab and due tracker for shops and people.",
-  "identifier":"com.afeemuhammodwafy.hishabledger",
-  "url":"https://hishabledger.amwafy.xyz/",
-  "author":{"@type":"Person","name":"Afee Muhammod Wafy"},
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://hishabledger.amwafy.xyz/#organization",
+      "name":"Wafy Labs",
+      "url":"https://hishabledger.amwafy.xyz/",
+      "founder":{"@id":"https://hishabledger.amwafy.xyz/#person"}
+    },
+    {
+      "@type":"Person",
+      "@id":"https://hishabledger.amwafy.xyz/#person",
+      "name":"Afee Muhammod Wafy",
+      "url":"https://hishabledger.amwafy.xyz/about/",
+      "worksFor":{"@id":"https://hishabledger.amwafy.xyz/#organization"}
+    },
+    {
+      "@type":"SoftwareApplication",
+      "name":"Hishab Ledger",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"Android",
+      "softwareVersion":"1.0.0",
+      "description":"A simple, private, offline personal hisab and due tracker for shops and people.",
+      "identifier":"com.afeemuhammodwafy.hishabledger",
+      "url":"https://hishabledger.amwafy.xyz/",
+      "author":{"@id":"https://hishabledger.amwafy.xyz/#person"},
+      "publisher":{"@id":"https://hishabledger.amwafy.xyz/#organization"},
+      "brand":{"@id":"https://hishabledger.amwafy.xyz/#organization"},
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    }
+  ]
 }</script>
 </head>
 <body>
@@ -68,6 +88,7 @@
     <p class="lead">Keep track of who owes you, record payments, and stay organized with a simple personal due tracker that works offline.</p>
     <div class="actions"><a class="btn btn-primary" href="assets/hishabledger.apk" download="hishabledger.apk">Download APK</a><a class="btn btn-soft" href="features/">Explore features</a></div>
     <p class="note">Simple · Private · Offline · Local records · Backup & restore · CSV/PDF export</p>
+    <p class="micro-note">A <strong>Wafy Labs</strong> project by <strong>Afee Muhammod Wafy</strong>.</p>
   </div>
   <div class="hero-art"><img src="assets/feature-graphic.webp" alt="Hishab Ledger feature graphic showing personal due tracking, payments and records" loading="eager" decoding="async" fetchpriority="high"><div class="pill-row"><span class="pill">Multiple shops</span><span class="pill">Due & Payment</span><span class="pill">Undo delete</span><span class="pill">Share statements</span></div></div>
 </div></section>

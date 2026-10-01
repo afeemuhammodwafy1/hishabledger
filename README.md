@@ -37,3 +37,7 @@ The app is designed for local/offline use. Core ledger records stay on the Andro
 ## Deployment
 
 Publish the contents of this repository to the hosting service configured for `hishabledger.amwafy.xyz`. The included `CNAME`, `robots.txt` and `sitemap.xml` are already configured for the new domain.
+
+
+## Project
+Hishab Ledger is a Wafy Labs project created by Afee Muhammod Wafy.
