@@ -1,6 +1,10 @@
 package com.wafyro.hishabledger
 
 import android.content.Context
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.core.tween
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,17 +13,16 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountBalanceWallet
-import androidx.compose.material.icons.filled.CloudSync
-import androidx.compose.material.icons.filled.PersonAdd
-import androidx.compose.material.icons.filled.ReceiptLong
+import androidx.compose.material.icons.outlined.AccountBalanceWallet
+import androidx.compose.material.icons.outlined.CloudSync
+import androidx.compose.material.icons.outlined.PersonAdd
+import androidx.compose.material.icons.outlined.ReceiptLong
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -42,25 +45,25 @@ private data class GuidePage(
 
 private val guidePages = listOf(
     GuidePage(
-        Icons.Default.AccountBalanceWallet,
+        Icons.Outlined.AccountBalanceWallet,
         "Welcome to Hishab Ledger", "Hishab Ledger-এ স্বাগতম",
         "Keep track of dues and payments with shops and people. No internet and no sign-up needed — your data stays on your phone.",
         "দোকান বা মানুষের সাথে বাকি আর পরিশোধের হিসাব রাখুন। ইন্টারনেট লাগে না, অ্যাকাউন্টও খুলতে হয় না। সব তথ্য শুধু আপনার ফোনে থাকে।"
     ),
     GuidePage(
-        Icons.Default.PersonAdd,
+        Icons.Outlined.PersonAdd,
         "Start with an account", "প্রথমে একটি হিসাব খুলুন",
         "Tap the + button at the bottom of the home screen. Choose Shop or Person, type the name, and add any previous due if there is one.",
         "হোম স্ক্রিনের নিচের মাঝখানের + বাটন চাপুন। দোকান নাকি ব্যক্তি বেছে নাম লিখুন। আগের কোনো বাকি থাকলে সেটাও লিখে দিতে পারেন।"
     ),
     GuidePage(
-        Icons.Default.ReceiptLong,
+        Icons.Outlined.ReceiptLong,
         "Record dues and payments", "বাকি ও পেমেন্ট লিখুন",
         "Open an account. \"Add Due\" increases the balance, \"Add Payment\" reduces it. Made a mistake? Delete the entry — you can restore it from Recently Deleted for 30 days.",
         "হিসাবটি খুলুন। \"বাকি যোগ করুন\" চাপলে বাকি বাড়ে, \"পেমেন্ট যোগ করুন\" চাপলে কমে। ভুল হলে এন্ট্রি মুছুন, ৩০ দিন পর্যন্ত \"সম্প্রতি মুছে ফেলা\" থেকে ফিরিয়ে আনা যাবে।"
     ),
     GuidePage(
-        Icons.Default.CloudSync,
+        Icons.Outlined.CloudSync,
         "Back up your ledger", "ব্যাকআপ নিয়ে রাখুন",
         "If the phone is lost or the app is uninstalled, the data cannot be recovered. Save a backup file regularly from Settings > Backup & Data.",
         "ফোন হারালে বা অ্যাপ মুছে ফেললে তথ্য ফিরে পাওয়া যায় না। তাই নিয়মিত সেটিংস > Backup & Data থেকে ব্যাকআপ ফাইল সংরক্ষণ করুন।"
@@ -82,12 +85,17 @@ fun OnboardingScreen(onFinish: () -> Unit) {
     }
 
     Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).systemBarsPadding()) {
+        // Keep the top area clean: no duplicate app icon on onboarding.
         Row(Modifier.fillMaxWidth().height(52.dp).padding(horizontal = 12.dp), horizontalArrangement = Arrangement.End, verticalAlignment = Alignment.CenterVertically) {
             if (!isLast) TextButton(onClick = onFinish) { Text(if (bn) "এড়িয়ে যান" else "Skip") }
         }
 
         HorizontalPager(state = pagerState, modifier = Modifier.weight(1f).fillMaxWidth()) { index ->
             val page = guidePages[index]
+            AnimatedVisibility(
+                visible = true,
+                enter = fadeIn(tween(380)) + slideInVertically(initialOffsetY = { it / 14 }, animationSpec = tween(380))
+            ) {
             Column(
                 Modifier.fillMaxSize().padding(horizontal = 28.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -121,6 +129,7 @@ fun OnboardingScreen(onFinish: () -> Unit) {
                         FilterChip(selected = bn, onClick = { AppLanguage.set(context, true) }, label = { Text("বাংলা") })
                     }
                 }
+            }
             }
         }
 

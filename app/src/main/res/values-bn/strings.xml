@@ -1,13 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Bengali translations for common UI labels. Brand and file-format names remain unchanged. -->
-    <string name="language_name">বাংলা</string>
-    <string name="total_payable">মোট দেনা</string>
-    <string name="total_accounts">মোট হিসাব</string>
-    <string name="search_shops_people">দোকান বা ব্যক্তির নাম খুঁজুন</string>
-    <string name="your_shops_people">আপনার দোকান ও ব্যক্তির হিসাব</string>
-    <string name="current_due">বর্তমান বাকি</string>
-    <string name="entries">এন্ট্রি</string>
-    <string name="add_due">বাকি যোগ করুন</string>
-    <string name="add_payment">পেমেন্ট যোগ করুন</string>
-    <string name="settings">সেটিংস</string>
+    <string name="shortcut_add_due_short">বাকি যোগ</string>
+    <string name="shortcut_add_due_long">বাকি যোগ করুন</string>
+    <string name="shortcut_add_payment_short">পেমেন্ট যোগ</string>
+    <string name="shortcut_add_payment_long">পেমেন্ট যোগ করুন</string>
 </resources>

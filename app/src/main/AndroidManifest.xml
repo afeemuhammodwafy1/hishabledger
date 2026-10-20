@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Lets the app check whether the Google Drive app is installed (Backup to Google Drive). -->
+    <queries>
+        <package android:name="com.google.android.apps.docs" />
+    </queries>
 
     <application
         android:allowBackup="false"
-        android:fullBackupContent="false"
-        android:icon="@drawable/bakiledger_icon"
+        android:icon="@drawable/hishab_icon"
         android:label="Hishab Ledger"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Baki">
-        <activity android:name=".MainActivity" android:exported="true">
+        android:theme="@style/Theme.HishabLedger.Starting">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <!-- Long-press app icon: Add Due / Add Payment -->
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
         </activity>
 
-        <receiver android:name=".DueReminderReceiver" android:exported="false"/>
-        <receiver android:name=".BootReceiver" android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
+        <!-- Shares the backup file with Google Drive without exposing app storage. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+        </provider>
     </application>
 </manifest>

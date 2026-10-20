@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="add_due"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_due"
+        android:shortcutShortLabel="@string/shortcut_add_due_short"
+        android:shortcutLongLabel="@string/shortcut_add_due_long">
+        <intent
+            android:action="com.wafyro.hishabledger.action.ADD_DUE"
+            android:targetPackage="com.wafyro.hishabledger"
+            android:targetClass="com.wafyro.hishabledger.MainActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="add_payment"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_payment"
+        android:shortcutShortLabel="@string/shortcut_add_payment_short"
+        android:shortcutLongLabel="@string/shortcut_add_payment_long">
+        <intent
+            android:action="com.wafyro.hishabledger.action.ADD_PAYMENT"
+            android:targetPackage="com.wafyro.hishabledger"
+            android:targetClass="com.wafyro.hishabledger.MainActivity" />
+    </shortcut>
+</shortcuts>

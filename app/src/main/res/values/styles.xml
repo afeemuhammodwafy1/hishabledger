@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Baki" parent="android:style/Theme.Material.Light.NoActionBar">
+    <style name="Theme.HishabLedger" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">#F7FAF8</item>
         <item name="android:navigationBarColor">#F7FAF8</item>
+        <item name="android:windowBackground">#F7FAF8</item>
         <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Launch theme: themed background (light/dark) so no black or white frame shows before the app draws. -->
+    <style name="Theme.HishabLedger.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_blank_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.HishabLedger</item>
     </style>
 </resources>

@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default-locale strings corresponding to the Bengali translations. -->
-    <string name="language_name">Bengali</string>
-    <string name="total_payable">Total Payable</string>
-    <string name="total_accounts">Total Accounts</string>
-    <string name="search_shops_people">Search shops or people</string>
-    <string name="your_shops_people">Your shops and people</string>
-    <string name="current_due">Current Due</string>
-    <string name="entries">Entries</string>
-    <string name="add_due">Add Due</string>
-    <string name="add_payment">Add Payment</string>
-    <string name="settings">Settings</string>
+    <string name="shortcut_add_due_short">Add Due</string>
+    <string name="shortcut_add_due_long">Add Due</string>
+    <string name="shortcut_add_payment_short">Add Payment</string>
+    <string name="shortcut_add_payment_long">Add Payment</string>
 </resources>
