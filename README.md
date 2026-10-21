@@ -184,4 +184,4 @@ This repository does not currently include a `LICENSE` file. Until a license is 
 
 Created by **Wafyro Software**.
 
-Founder & CEO **Afee Muhammod Wafy**
+Founder & Software Developer **Afee Muhammod Wafy**
