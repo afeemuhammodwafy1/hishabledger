@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="Hishab-Ledger-Banner.webp"
+       alt="Hishab Ledger — Simple, Private, Offline"
+       width="100%">
+</p>
+
 # Hishab Ledger
 
 **An offline-first Android app for tracking personal dues, receivables, and payments.**
