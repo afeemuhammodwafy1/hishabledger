@@ -184,7 +184,9 @@ The source includes these changes and behaviors for version 1.1.1:
 
 ## License
 
-This repository does not currently include a `LICENSE` file. Until a license is added, do not assume the source code is available for reuse, modification, or redistribution. Add an explicit license if you want to grant those permissions.
+Hishab Ledger is licensed under the [MIT License](LICENSE).
+
+You are free to use, copy, modify, distribute, and include this software in commercial projects, subject to the terms of the license.
 
 ## Maintainer
 
