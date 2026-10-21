@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.webp"
+  <img src="Hishab-Ledger-Banner.webp"
        alt="Hishab Ledger — Simple, Private, Offline"
        width="100%">
 </p>
@@ -58,45 +58,15 @@ Hishab Ledger helps you keep track of money owed to or received from people and 
 
 ## Screenshots
 
-Explore the main screens and workflows of Hishab Ledger.
+Screenshots are not included in this repository yet. Add current screenshots here to make the app easier to evaluate, for example:
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/home-dashboard.webp" alt="Hishab Ledger home dashboard" width="260"><br>
-      <strong>Home Dashboard</strong><br>
-      <sub>Overview of accounts, balances, and recent activity.</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/images/account-ledger.webp" alt="Account ledger and payment history" width="260"><br>
-      <strong>Account Ledger</strong><br>
-      <sub>Review dues, payments, and account history.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/add-account.webp" alt="Add a shop or person" width="260"><br>
-      <strong>Add Shops &amp; People</strong><br>
-      <sub>Create an account and organize ledger records.</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/images/transaction-entry.webp" alt="Record a due or payment" width="260"><br>
-      <strong>Due &amp; Payment Entry</strong><br>
-      <sub>Record transactions for an account.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/settings.webp" alt="Hishab Ledger settings" width="260"><br>
-      <strong>Settings</strong><br>
-      <sub>Manage preferences, security, and data tools.</sub>
-    </td>
-    <td width="50%" align="center">
-      <strong>Simple. Private. Offline.</strong><br>
-      <sub>Designed to help keep ledger records organized on your device.</sub>
-    </td>
-  </tr>
-</table>
+```markdown
+![Home screen](docs/screenshots/home.png)
+![Account details](docs/screenshots/account-details.png)
+![Settings](docs/screenshots/settings.png)
+```
+
+Only add image paths after committing the corresponding screenshot files.
 
 ## Tech stack
 
